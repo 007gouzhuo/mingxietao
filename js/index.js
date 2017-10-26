@@ -5,20 +5,20 @@
 
 
 $(function(){
+	console.log(getCookie("userId"))
 	//header
-	$.ajax({
+$.ajax({
 		type:"get",
 		url:"php/getShoppingCart.php",
 		async:true,
 		data:{
-			"userId":$("#userName").html()
+			"userId":getCookie("userId")
 		},
-		
 		success:function(data){
-			
-			var shangpingCount=eval(data).length;
+			var shangping=eval(data);
 			console.log(data);
-			$(".shoppingCar p span").html(shangpingCount);
+//			console.log(shangping);
+		
 		}
 	});
 	
